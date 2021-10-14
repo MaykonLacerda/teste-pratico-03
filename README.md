@@ -33,7 +33,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [PostgreSQL](https://www.postgresql.org/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
 
-#### 🎲 Rodando o Backend (servidor)
+### 🎲 Rodando o Backend (servidor)
 
 ```bash
 # Clone este repositório
@@ -46,14 +46,14 @@ $ cd back-end
 $ yarn
 
 ```
- #### Agora você precisa rodar as migrations do TypeORM. Antes de realizar esta etapa, primeiro você deve configurar seu banco de dados e as variáveis de ambiente.
- - #### ***Banco de dados:*** Acesse o bash do PostgreSQL e digite: 
+ Agora você precisa rodar as migrations do TypeORM. Antes de realizar esta etapa, primeiro você deve configurar seu banco de dados e as variáveis de ambiente.
+ - ***Banco de dados:*** Acesse o bash do PostgreSQL e digite: 
  ```bash
  #Obs.: Verifque que o banco de dados seja criado no usuário correto do Postgres, ao qual você tem os dados de usuário e senha.
  $ CREATE DATABASE database_teste_pratico;
 ```
 
-- #### ***Variáveis de ambiente:*** Renomeie o arquivo '.env.example' para '.env'
+- ***Variáveis de ambiente:*** Renomeie o arquivo '.env.example' (presente em /teste-pratico-o3/back-end)  para '.env'
 
 
 ```bash
@@ -71,7 +71,19 @@ DB_NAME=database_teste_pratico
 
 #Obs.: Verifique que os dados do banco sejam os mesmos das variáveis de ambiente.
 ```
-#### 🧭 Rodando a aplicação web (Frontend)
+
+Agora é rodar os comando do TypeORM para criar as tabelas e o comando de iniciar a aplicação como desenvolvimento.
+
+```bash
+#Dentro da pasta 'back-end', digite
+yarn typeorm:run
+
+#E agora rode o servidor
+yarn dev
+
+#Pronto, o back-end agora deve estar funcionando. Verifique no log da aplicação as mensagens confirmando o funcionamento e a conexão com o banco de dados.
+```
+### 🧭 Rodando a aplicação web (Frontend)
 
 ```bash
 # Clone este repositório (caso não tenha feito anteriormente)
